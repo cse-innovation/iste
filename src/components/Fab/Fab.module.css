@@ -1,0 +1,57 @@
+.fab {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  left: 0;
+  top: 0.5rem;
+  background: white;
+  border-radius: 0 0.5rem 0.5rem 0;
+  transition: transform 0.5s ease-in-out;
+  z-index: 9;
+}
+
+.activeFab {
+  transform: translateX(100vw);
+  transition: transform 0.5s ease-in-out;
+}
+
+.close {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  right: 0;
+  top: 0.5rem;
+  background: white;
+  border-radius: 0.5rem 0 0 0.5rem;
+  transition: display 0.5s ease-in-out;
+  z-index: 10;
+  display: block;
+}
+
+.menu {
+  width: 100vw;
+  height: 100vh;
+  background: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100vw);
+  transition: transform 0.5s ease-in-out;
+  z-index: 9;
+}
+.activeMenu {
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
