@@ -1,5 +1,5 @@
 .frame {
-  height: 100vh;
+  /* height: 100vh; */
   /* background: radial-gradient(50% 50% at 50% 50%, #f9f9f9 0%, #ffeaea 100%); */
   padding: clamp(1rem, 2vw + 1rem, 4rem);
   display: flex;
@@ -119,6 +119,8 @@
   padding: 0.5rem;
   display: flex;
   justify-content: center;
+  position: sticky;
+  bottom: 0;
 }
 
 @media only screen and (max-width: 1450px) {

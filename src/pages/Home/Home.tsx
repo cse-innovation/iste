@@ -65,9 +65,9 @@ const Home: Component = () => {
       </div>
       {/* Marquee */}
       <Marquee />
-      <div class={styles.footer}>
-        Brought To You By Sri Sairam College Of Engineering, Anekal
-      </div>
+      {/* <div class={styles.footer}> */}
+      {/*   Brought To You By Sri Sairam College Of Engineering, Anekal */}
+      {/* </div> */}
     </div>
   )
 }
