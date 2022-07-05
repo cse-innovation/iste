@@ -4,7 +4,7 @@ import { Link } from 'solid-app-router'
 import styles from './Fab.module.css'
 import menu from '../../assets/menu.svg'
 import close from '../../assets/close.svg'
-import { links } from '../../App.tsx'
+import { links, setPathName } from '../../App.tsx'
 
 const Fab: Component = () => {
   const [nav, setNav] = createSignal(false)
@@ -63,22 +63,32 @@ const Fab: Component = () => {
   }
 
   function handleHyphen(s: string) {
+    if (s == 'about-iste') {
+      return 'About ISTE'
+    }
     return s.split('-').join(' ')
   }
 
   return (
     <div>
       <div class={styles.fab} id='fab' onClick={handleOnClick}>
-        <img src={menu} alt='logo' />
+        <img class={styles.icon} src={menu} alt='logo' />
       </div>
       <div class={styles.menu} id='menu'>
         <div class={styles.close} id='close' onClick={handleOnClick}>
-          <img src={close} alt='close' />
+          <img class={styles.icon} src={close} alt='close' />
         </div>
         <div class={styles.menuBox}>
-          <div class={styles.title}>Welcome to ISTE FDC 2022!</div>
+          <div class={styles.title}>Welcome to ISTE FC 2022!</div>
           <div class={styles.options}>
-            <Link class={styles.link} href='/' onClick={handleOnClick}>
+            <Link
+              class={styles.link}
+              href='/'
+              onClick={() => {
+                handleOnClick()
+                setPathName('/')
+              }}
+            >
               Home
             </Link>
             <For each={links}>
@@ -86,7 +96,10 @@ const Fab: Component = () => {
                 <Link
                   class={styles.link}
                   href={`/${link}`}
-                  onClick={handleOnClick}
+                  onClick={() => {
+                    handleOnClick()
+                    setPathName(link)
+                  }}
                 >
                   {handleHyphen(link)}
                 </Link>

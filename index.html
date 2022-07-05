@@ -5,14 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <link rel="shortcut icon" type="image/ico" href="/src/assets/favicon.ico" />
-    <title>Solid App</title>
+    <title>ISTE FC</title>
     <style>
       html,
       body {
         margin: 0;
+        background-color: #fff;
       }
+
       a {
         text-decoration: none;
+      }
+
+      table {
+        text-align: left;
+        /* border-collapse: collapse; */
+        border-spacing: 0;
+      }
+
+      td {
+        border: 0.1rem solid rgba(200, 200, 200, 0.45);
+        padding: 1rem;
+        vertical-align: top;
+      }
+
+      table tr:first-child td:first-child {
+        border-top-left-radius: 0.5rem;
+      }
+
+      table tr:first-child td:last-child {
+        border-top-right-radius: 0.5rem;
+      }
+
+      table tr:last-child td:first-child {
+        border-bottom-left-radius: 0.5rem;
+      }
+
+      table tr:last-child td:last-child {
+        border-bottom-right-radius: 0.5rem;
       }
     </style>
   </head>

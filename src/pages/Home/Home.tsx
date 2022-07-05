@@ -1,7 +1,10 @@
 import type { Component } from 'solid-js'
 import { createSignal, createEffect } from 'solid-js'
+import { Link } from 'solid-app-router'
+
 import styles from './Home.module.css'
 import Marquee from '../../components/Marquee/Marquee.tsx'
+import Page from '../../components/Page/Page.tsx'
 
 const Home: Component = () => {
   let ti1 = {
@@ -29,7 +32,7 @@ const Home: Component = () => {
     changeCount()
   })
   return (
-    <div>
+    <div class={styles.page}>
       {/* Hero Section */}
       <div class={styles.frame}>
         <div class={styles.date}>
@@ -52,13 +55,19 @@ const Home: Component = () => {
           <div class={styles.theme}>
             Theme: The Role of Higher <br />
             Education Institutions In achieving
-            <br /> sustainable energy I guess
+            <br />
+            sustainable energy
           </div>
         </div>
-        <div class={styles.cta}>Register Now!</div>
+        <Link class={styles.cta} href='/register-now'>
+          Register Now!
+        </Link>
       </div>
       {/* Marquee */}
       <Marquee />
+      <div class={styles.footer}>
+        Brought To You By Sri Sairam College Of Engineering, Anekal
+      </div>
     </div>
   )
 }
